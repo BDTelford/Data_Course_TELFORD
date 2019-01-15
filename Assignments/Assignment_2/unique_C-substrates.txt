@@ -1,0 +1,33 @@
+     36 2-Hydroxy Benzoic Acid
+     36 4-Hydroxy Benzoic Acid
+     36 D.L -α-Glycerol Phosphate
+     36 D-Cellobiose
+     36 D-Galactonic Acid γ-Lactone
+     36 D-Galacturonic Acid
+     36 D-Glucosaminic Acid
+     36 D-Mallic Acid
+     36 D-Mannitol
+     36 D-Xylose
+     36 Glucose-1-Phosphate
+     36 Glycogen
+     36 Glycyl-L-Glutamic Acid
+     36 i-Erythitol
+     36 Itaconic Acid
+     36 L-Arginine
+     36 L-Asparganine
+     36 L-Phenylalanine
+     36 L-Serine
+     36 L-Threonine
+     36 N-Acetyl-D-Glucosamine
+     36 Phenylethylamine
+     36 Putrescine
+     36 Pyruvic Acid Methyl Ester
+      1 Substrate
+     36 Tween 40
+     36 Tween 80 
+     36 Water
+     36 α-Cyclodextrin
+     36 α-D-Lactose
+     36 α-Ketobutyric Acid
+     36 β-Methyl-D- Glucoside
+     36 γ-Hydroxybutyric Acid

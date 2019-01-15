@@ -1,0 +1,5 @@
+      1 bear
+      2 deer
+      1 fox
+      3 rabbit
+      1 raccoon
