@@ -47,21 +47,10 @@ dat$Year_Collected[dat$Ben_relative_to_Katy == min(dat$Ben_relative_to_Katy)]
 
 #task 5
 
-dat1 <-  subset(dat, Year_Collected == "2000")
-dat2 <-  subset(dat, Year_Collected == "2001")
-dat3 <-  subset(dat, Year_Collected == "2002")
-dat4 <-  subset(dat, Year_Collected == "2003")
-dat5 <-  subset(dat, Year_Collected == "2004")
-dat6 <-  subset(dat, Year_Collected == "2005")
-dat7 <-  subset(dat, Year_Collected == "2006")
-dat8 <-  subset(dat, Year_Collected == "2007")
-dat9 <-  subset(dat, Year_Collected == "2008")
-dat10 <-  subset(dat, Year_Collected == "2009")
-dat11 <-  subset(dat, Year_Collected == "2010")
-dat12 <-  subset(dat, Year_Collected == "2011")
+datr = by(dat$Ben_relative_to_Katy, dat$Year_Collected, mean)
+daty = c(2001,2002, 2003, 2004, 2005, 2006 ,2007,2008, 2009, 2010, 2011,2012 )
+datd = cbind(daty,datr)
+datg = [,datd$datr]
+summary(datd)
+max(datr)
 
-ben1 = cbind(mean(dat1$Ben_relative_to_Katy), mean(dat2$Ben_relative_to_Katy), mean(dat3$Ben_relative_to_Katy), mean(dat4$Ben_relative_to_Katy), mean(dat5$Ben_relative_to_Katy), mean(dat6$Ben_relative_to_Katy), mean(dat7$Ben_relative_to_Katy),mean(dat8$Ben_relative_to_Katy), mean(dat9$Ben_relative_to_Katy), mean(dat10$Ben_relative_to_Katy), mean(dat11$Ben_relative_to_Katy)
-
-
-
-mean( subset(dat, Year_Collected == "2000"))
