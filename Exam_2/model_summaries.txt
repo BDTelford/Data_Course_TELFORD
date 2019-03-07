@@ -1,0 +1,26 @@
+
+Call:
+lm(formula = Diversity ~ Aerosol_Density, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1456.4  -387.8    30.4   304.4  3382.5 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      59.2454    64.6477   0.916     0.36    
+Aerosol_Density   2.6116     0.1962  13.314   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 546.4 on 296 degrees of freedom
+Multiple R-squared:  0.3746,	Adjusted R-squared:  0.3724 
+F-statistic: 177.3 on 1 and 296 DF,  p-value: < 2.2e-16
+
+                        Df   Sum Sq  Mean Sq  F value Pr(>F)    
+Aerosol_Density          1 52925053 52925053 1276.257 <2e-16 ***
+Precip                   1 76120359 76120359 1835.598 <2e-16 ***
+Aerosol_Density:Precip   1    64978    64978    1.567  0.212    
+Residuals              294 12191877    41469                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
