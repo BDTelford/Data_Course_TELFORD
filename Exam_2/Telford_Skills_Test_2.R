@@ -94,12 +94,7 @@ capture.output(t, file = "model_summaries.txt", append = TRUE)
 #Add these predicted values (from hypothetical data - Part II, Step 6) to a plot of 
 #actual data and differentiate them by color. (10 bonus points possible for a pretty graph)
 
-bonplot = ggplot() +
+ggplot() +
   geom_point(data=preds, aes(x = Aerosol_Density, y = Diversity), color='black') + 
   geom_point(data=datpreds, aes(x = Aerosol_Density, y = Model_2), color='red') + 
   geom_point(data=datpreds, aes(x = Aerosol_Density, y = Model_1), color='blue') 
-
-
-  
-
-
