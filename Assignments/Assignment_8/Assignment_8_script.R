@@ -8,7 +8,7 @@ library(tidyverse)
 library(reshape2)
 
 # Read in Data
- df = read.csv("../../../Data_Course/Data/GradSchool_Admissions.csv")
+ df = read.csv("./GradSchool_Admissions.csv")
 
  #Relationship between rank and admit
  ggplot(df, aes(x = rank, y = admit)) +
@@ -54,3 +54,4 @@ ggplot(dd, aes(x=rank, y=value, colour=variable)) + geom_point() +
   labs(title = "Addmission into Gradschool",
        subtitle = "Colored by actual/prediction")
    
+

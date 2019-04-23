@@ -24,7 +24,7 @@ library(tidyverse)
 library(reshape2)
 
 # Read in Data
- df = read.csv("../../../Data_Course/Data/GradSchool_Admissions.csv")
+ df = read.csv("./GradSchool_Admissions.csv")
  
 ```
 
