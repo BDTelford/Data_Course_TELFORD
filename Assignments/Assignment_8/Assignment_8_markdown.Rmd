@@ -1,0 +1,95 @@
+---
+title: "Factors Affecting Admission into Gradschool"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Data Exploration
+Various aspects of the data were explored to examine relationships between variable affecting admission.
+
+```{r include=FALSE}
+#Read in libraries
+library(glmulti)
+library(modelr)
+library(broom)
+library(dplyr)
+library(fitdistrplus)
+library(tidyverse)
+library(reshape2)
+
+# Read in Data
+ df = read.csv("../../../Data_Course/Data/GradSchool_Admissions.csv")
+ 
+```
+
+```{r echo=FALSE}
+ #Relationship between rank and admit
+ ggplot(df, aes(x = rank, y = admit)) +
+   geom_point() +
+   geom_smooth(method = "lm") + xlab("Rank") + ylab("Admit") +
+   labs(title = "Addmission into Gradschool",
+        subtitle = "Relationship between rank and admittance")
+```
+ 
+```{r echo=FALSE}
+ #Relationship between admit and gpa
+ ggplot(df, aes(x = gpa, y = admit)) +
+   geom_point() +
+   geom_smooth(method = "lm") + xlab("GPA") + ylab("Admit") +
+   labs(title = "Addmission into Gradschool",
+        subtitle = "Relationship between GPA and admittance")
+```
+ 
+```{r echo=FALSE}
+ #Relationship between gre and admit
+ ggplot(df, aes(x = gre, y = admit)) +
+   geom_point() +
+   geom_smooth(method = "lm") + xlab("GRE") + ylab("Admit") +
+   labs(title = "Addmission into Gradschool",
+        subtitle = "Relationship between GRE and admittance")
+```
+
+```{r include=FALSE}
+# Determines the Best Model
+prednames = names(df)[2:4] 
+ g1 <- glmulti("admit",xr=prednames,data=df,level=1)
+```
+
+# Model Creation and Screening
+All possible models were examined using glmulti. Glmuti finds what are the n best models (the confidence set of models) among all possible models of factors affecting admission.Models are fitted with the specified fitting function (glm) and are ranked with the specified Information Criterion (aicc). The best model was found through exhaustive screening of all possible models.
+
+####Screening Output and Analysis
+ 
+```{r echo=FALSE}
+ print(g1)
+ plot(g1)
+ plot(g1, type="s")
+```
+
+```{r include=FALSE}
+ pred = predict(loess(admit ~ gre +gpa + rank, data = df))
+ df$prediction = pred
+
+ dfs = df[,c(1,4,5)]
+ dd = melt(dfs, id=c("rank"))
+```
+# Plotting of preditions from model compared to actual values of acceptance
+ 
+```{r echo=FALSE,  warning=FALSE}
+ggplot(dd, aes(x=rank, y=value, colour=variable)) + geom_point() + 
+  geom_smooth(method = 'loess', formula = 'y ~ x', se = FALSE) +
+   scale_colour_manual(values=c("black", "red"), name = "Data Type") + 
+  xlab("Rank of Undergrad Institution (1 is top tier)") + 
+  ylab("Admit (1 = yes, 0 = no)") +
+  labs(title = "Admission into Gradschool",
+       subtitle = "Colored by actual/prediction")
+```
+
+# Conclusion
+While each of the factors explored affect admission to a degree, the most influential factor is the rank of the undergrad institution. GPA was determined to be the secondary contributing factor in admission.
