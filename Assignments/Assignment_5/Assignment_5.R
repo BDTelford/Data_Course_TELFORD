@@ -33,7 +33,7 @@ ggplot(data = mtcars, aes(y = wt, x = mpg)) + xlab("Miles-per-gallon") + ylab("W
 
 #Task 7: saves this second plot as a tiff image called “mpg_vs_wt_auto.tiff” 
 #in your Assignment_5 directory
-tiff('“mpg_vs_wt_auto.tiff')
+tiff('mpg_vs_wt_auto.tiff')
 ggplot(data = mtcars, aes(y = wt, x = mpg)) + xlab("Miles-per-gallon") + ylab("Weight") +
   geom_point() + ggtitle("Effect of weight on miles-per-gallon") + 
   theme(plot.title = element_text(hjust = 0.5)) + geom_smooth()
