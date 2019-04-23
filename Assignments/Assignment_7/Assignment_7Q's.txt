@@ -1,0 +1,4 @@
+1. Are any of your predicted response values from your best model scientifically meaningless? Explain.
+2. In your plots, did you find any non-linear relationships? If so, do a bit of research online and give
+a link to at least one resource explaining how to deal with this in R
+Yes the relationship between growth rate and nitrogen. https://www.r-bloggers.com/first-steps-with-non-linear-regression-in-r/
