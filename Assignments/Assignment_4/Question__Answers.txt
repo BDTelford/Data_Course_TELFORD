@@ -1,0 +1,13 @@
+1. What other stuff does read.csv() do automatically? Separates the values by commas. dec = "." which denotes that a period means a decimal point in the file.  fill is automatically true which means that in case the rows have unequal length, blank fields are implicitly added. 
+
+2. How is it different from read.csv2()? read.csv2() separates values using a semi colon sep = ";"
+
+3. Why does read.csv2() even exist? for countries that use a comma as decimal point and a semicolon as field separator.
+4. How could I change the parameters of read.csv() to make it so the class of the “State”
+column is “character” instead of “factor?” you can change the parameters for calling the columns per individual column see following code: df <- read.csv("../../Data/landdata-states.csv", colClasses=c("State"="character")) 
+5. What command would give the summary stats for ONLY the Home.Value column? summary(df$Home.Value)
+
+6. What value is returned by the command: names(df)[4] ? [1] "Home.Value"
+7. What is happening when you add (. . . col=df$region) to the above plotting code? The plot is now colored by region 
+
+8.
